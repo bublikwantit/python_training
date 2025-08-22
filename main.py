@@ -440,3 +440,186 @@ text = """
 
 # pow_2 = time_count(pow_2)
 # pow_2()
+
+# L = ['a', 'b', 'c']
+# print(id(L))
+
+# L.append('d')
+# print(id(L))
+
+# print(L)
+
+# a = 5
+# b = 3+2
+# print(id(a))
+# print(id(b))
+
+
+# a = 0
+# b = 0
+
+# while id(a) == id(b):
+#     a -= 1
+#     b -= 1
+
+# print(a)
+
+
+# shopping_center = ("Галерея", "Санкт-Петербург",
+#                    "Лиговский пр., 30", ["H&M", "Zara"])
+# list_id_before = id(shopping_center[-1])
+# print(shopping_center[-1])
+
+# shopping_center[-1].append("Uniqlo")
+# list_id_after = id(shopping_center[-1])
+# print(shopping_center[-1])
+
+# print(list_id_before)
+# print(list_id_after)
+
+# print(list_id_before == list_id_after)
+
+
+# L = [1, 1, 2, 3, 2]
+
+# b = set(L)
+
+# print(b)
+# print(b)
+# print(b)
+# # {1,2,3}
+
+
+# text = "        The Zen of Python"
+
+# unique = set(text)
+
+# print("Количество уникальных символов: ", len(unique))
+
+
+# L = [_ for _ in range(1, 11)]
+# M = [_ for _ in range(10, 0, -1)]
+
+# for a, b in zip(L, M):
+#     print(a, b)
+
+# N = []
+
+# for i in range(10):
+#     N.append(L[i] * M[i])
+# print(N)
+
+
+# for a in zip(L, M):
+#     print(a)
+
+# for a, b in zip(L, M):
+# print(f"a= {a} b={b}")
+
+# a3b2c4d1a2
+# my_str = 'aaabbccccdaa'
+
+# first_char = my_str[0]
+# count = 0
+# res_str = ''
+
+# for i in my_str:
+#     if i == first_char:
+#         count += 1
+#     else:
+#         res_str += (first_char + str(count))
+#         count = 1
+#         first_char = i
+# res_str += first_char + str(count)
+# print(res_str)
+
+
+# numbers = [1, 2, 3, 4, 5]
+# more_numbers = [*numbers, 6, 7]
+# print(more_numbers)
+
+
+# def my_foo(*args):
+#     res = " ".join(str(i) for i in args)
+#     print(res)
+
+
+# my_foo(5, 6, 7, 8, 9)
+# print(*numbers)
+
+# Числа Фибоначи
+# def fib():
+#     a, b = 0, 1
+#     yield a
+#     yield b
+
+#     while True:
+#         a, b = b, a + b
+#         yield b
+
+# итераторы
+# for num in fib():
+#     print(num)
+
+# def repeat_list(list_):
+#     list_values = list_.copy()
+#     while True:
+#         value = list_values.pop(0)
+#         list_values.append(value)
+#         yield value
+
+
+# for i in repeat_list([1, 2, 3]):
+#     print(i)
+
+# iter_obj = iter("Hello!")
+# print(next(iter_obj))
+# print(next(iter_obj))
+# print(next(iter_obj))
+# print(next(iter_obj))
+# print(next(iter_obj))
+# print(next(iter_obj))
+# print(next(iter_obj))
+
+#  =======================================================================================
+
+# декоратор
+# USERS = ['admin', 'guest', 'director', 'root', 'superstar']
+
+# yesno = input("""Введите Y, если хотите авторизоваться, или N,
+#              если хотите продолжить работу как анонимный пользователь: """)
+
+# auth = yesno == "Y"
+
+# if auth:
+#     username = input("Введите ваш username:")
+
+
+# def is_auth(func):
+#     def wrapper():
+#         if auth:
+#             print("Пользователь авторизован")
+#             func()
+#         else:
+#             print("Пользователь не авторизован. Функция выполнена не будет")
+#     return wrapper
+
+
+# def has_access(func):
+#     def wrapper():
+#         if username in USERS:
+#             print("Авторизован как", username)
+#             func()
+#         else:
+#             print("Доступ пользователю", username, "запрещён")
+#     return wrapper
+
+
+# @is_auth
+# @has_access
+# def from_db():
+#     print("some data from database")
+
+
+# from_db()
+#  =======================================================================================
